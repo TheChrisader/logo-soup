@@ -1,0 +1,39 @@
+{
+  "name": "@chrisader/logo-soup",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "1.0.0",
+  "description": "Framework-agnostic TypeScript library for normalising logo visuals.",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json && tsc -p tsconfig.types.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src tests --ext .ts",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [],
+  "sideEffects": false,
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "happy-dom": "^20.9.0",
+    "typescript": "^6.0.3",
+    "vitest": "^3.2.4"
+  }
+}
