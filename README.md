@@ -9,13 +9,13 @@ Works in any environment with a DOM or DOM polyfill (browsers, happy-dom, jsdom)
 ## Install
 
 ```bash
-npm install logo-soup
+npm install @chrisader/logo-soup
 ```
 
 ## Quick start
 
 ```ts
-import { normalizeLogos } from "logo-soup";
+import { normalizeLogos } from "@chrisader/logo-soup";
 
 const result = await normalizeLogos([
   { src: "/logos/acme.svg", alt: "Acme" },
@@ -47,7 +47,7 @@ Pass an options object as the second argument to `normalizeLogos`:
 When `alignBy` is set to a visual center mode, each logo includes a CSS `transform` string you can apply to shift it so its perceived weight center lines up with other logos:
 
 ```ts
-import { normalizeLogos, getVisualCenterTransform } from "logo-soup";
+import { normalizeLogos, getVisualCenterTransform } from "@chrisader/logo-soup";
 
 const result = await normalizeLogos(logos, { alignBy: "visual-center" });
 
